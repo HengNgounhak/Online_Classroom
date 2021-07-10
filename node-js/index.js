@@ -73,7 +73,7 @@ app.use(routes)
 mongoose.connect('mongodb+srv://user1:User1234@cluster0.cqgou.mongodb.net/Online_Classroom?retryWrites=true&w=majority', { useFindAndModify: false, useNewUrlParser: true })
     .then(result => {
         console.log("Db is connected");
-        app.set("port", port);
+        app.listen(port);
     }).catch(err => {
         console.log(err);
     })

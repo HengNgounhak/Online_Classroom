@@ -21,8 +21,7 @@ exports.newAssignment = async(req, res) => {
     try {
         //save class to database
         const result = await assignment.save()
-        console.log(result);
-        //if save class success res to inform
+            //if save class success res to inform
         if (result) {
             res.json({ "success": true });
         }

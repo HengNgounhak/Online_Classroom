@@ -2,7 +2,7 @@
     <div>
         <blur v-show="isMore" @click="more"/>
         <tr>
-            <td><a :href="'http://localhost:4000/'+file.name"><fa class="icon" icon="file"/> {{file.name}}</a></td>
+            <td><a :href="'http://localhost:4000/'+file.name"><fa class="icon" icon="file"/><span class="d-inline-block text-truncate" style="max-width: 80%;"> {{file.name}}</span></a></td>
             <td>{{file.dateAdd}}</td>
             <fa v-if="isTeacher" @click="more" class="moreBtn" icon="ellipsis-h"/>
             <fa v-else @click="donwload" class="download" icon="arrow-down"/>

@@ -170,7 +170,7 @@ export default {
             } 
 
             //covert am pm to 24 hour 
-            var hour = datetime.substring(datetime.length-2, datetime.length) == "PM" ? Number(datetime.substring(13, 15)) + 12 : Number(datetime.substring(13, 15));
+            var hour = datetime.substring(datetime.length-2, datetime.length) == "AM" ? Number(datetime.substring(13, 15)) + 12 : Number(datetime.substring(13, 15));
             
             //check if submit date time is on the datelin
             var dateline = new Date(datetime.substring(8, 12), mm, datetime.substring(5, 7), hour, datetime.substring(16, 18))
@@ -230,7 +230,8 @@ export default {
                 file: this.fName
             }).then((result) => {
                 if(result.data.success){
-                    this.$router.go() 
+                    // this.$router.go() 
+                    console.log(result)
                 }
             }).catch((err) => {
                 console.log(err)

@@ -89,13 +89,10 @@ export default {
             }
         },
         myFiles(files){
-            console.log(this.fName)
-            console.log(files)
             for(var f=0; f<files.length; f++){
                 this.fName.push(files[f].name)
                 this.files.push(files[f])
             }
-            console.log(this.fName)
         },
         removeFile(fileName){
             for(var f=0; f<this.fName.length; f++){
@@ -152,7 +149,6 @@ export default {
                         dateline: this.datetime,
                         score: this.score
                     }).then((result) => {
-                        console.log(result.data.success)
                         if(result.data.success){
                             this.$router.go() 
                         }
@@ -195,10 +191,9 @@ export default {
                 mm='0'+mm
             } 
             //covert am pm to 24 hour 
-            var hour = dt.substring(dt.length-2, dt.length) == "PM" ? parseInt(dt.substring(13, 15)) + 12 : dt.substring(13, 15);
+            var hour = dt.substring(dt.length-2, dt.length) == "AM" ? parseInt(dt.substring(13, 15)) + 12 : dt.substring(13, 15);
             this.date = dt.substring(8, 12)+'-'+mm+'-'+dt.substring(5, 7)
             this.time = hour+":"+dt.substring(16, 18)
-
             this.checkDatetime()
         }
     }

@@ -28,10 +28,10 @@
                 <btn @click="signout" size="18px" text="Sign Out"/>
             </div>
         </div>
-        <div v-if="classes" class="classes">
+        <div v-if="classes.length>0" class="classes">
             <class v-for="myClass in classes" :key="myClass._id" :className="myClass.name" :teacherId="myClass.teacher" :cId="myClass._id" :cCode="myClass.code" @editClass="getClass"/>            
         </div>
-        <div v-else class="text-center">
+        <div v-else class="text-center mt-5">
             <img class="empty w-25" src="../assets/emptyClass.jpg">
             <h5 class="mt-3">No class</h5>
         </div>
