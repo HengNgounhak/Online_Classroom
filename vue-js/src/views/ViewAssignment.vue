@@ -230,8 +230,7 @@ export default {
                 file: this.fName
             }).then((result) => {
                 if(result.data.success){
-                    // this.$router.go() 
-                    console.log(result)
+                    this.$router.go() 
                 }
             }).catch((err) => {
                 console.log(err)
